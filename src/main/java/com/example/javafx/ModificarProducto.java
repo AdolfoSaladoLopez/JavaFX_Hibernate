@@ -5,10 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import models.Producto;
 
 import java.io.IOException;
@@ -16,15 +13,18 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class CrearProducto implements Initializable {
+public class ModificarProducto implements Initializable {
     ProductoDAO gestorProductos = new ProductoDAOHib();
-    Producto nuevoProducto = new Producto();
+    Producto productoAModificar = new Producto();
 
     @FXML
     private Button btnCancelar;
 
     @FXML
     private Button btnEnviar;
+
+    @FXML
+    private Label lbDatosActuales;
 
     @FXML
     private ComboBox<String> cbDisponibilidad;
@@ -40,6 +40,8 @@ public class CrearProducto implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        productoAModificar = SessionData.getProducto();
+
         ObservableList<String> tipos = FXCollections.observableArrayList(
                 "Bocadillo", "Bebida", "Snack"
         );
@@ -52,12 +54,19 @@ public class CrearProducto implements Initializable {
                 "Disponible", "No disponible"
         );
 
+        tfNombre.setText(productoAModificar.getNombre());
         cbTipo.setItems(tipos);
-        cbTipo.getSelectionModel().selectFirst();
+        cbTipo.getSelectionModel().select(productoAModificar.getTipo());
         cbPrecio.setItems(precios);
-        cbPrecio.getSelectionModel().selectFirst();
+        cbPrecio.getSelectionModel().select(productoAModificar.getPrecio());
         cbDisponibilidad.setItems(disponibilidad);
         cbDisponibilidad.getSelectionModel().selectFirst();
+
+        lbDatosActuales.setText("Nombre actual: " + productoAModificar.getNombre() +
+                " - Tipo actual: " + productoAModificar.getTipo() +
+                " - Precio actual: " + productoAModificar.getPrecio() +
+                " - Disponibilidad actual: " + (productoAModificar.getDisponibilidad()?"Disponible":"No disponible"));
+
 
     }
 
@@ -84,12 +93,12 @@ public class CrearProducto implements Initializable {
             }
         }
 
-        nuevoProducto.setNombre(tfNombre.getText());
-        nuevoProducto.setTipo(cbTipo.getSelectionModel().getSelectedItem());
-        nuevoProducto.setPrecio(cbPrecio.getValue());
-        nuevoProducto.setDisponibilidad(cbDisponibilidad.getSelectionModel().getSelectedItem().equals("Disponible"));
+        productoAModificar.setNombre(tfNombre.getText());
+        productoAModificar.setTipo(cbTipo.getSelectionModel().getSelectedItem());
+        productoAModificar.setPrecio(cbPrecio.getValue());
+        productoAModificar.setDisponibilidad(cbDisponibilidad.getSelectionModel().getSelectedItem().equals("Disponible"));
 
-        gestorProductos.crearProducto(nuevoProducto);
+        gestorProductos.actualizarProducto(productoAModificar);
 
         HelloApplication.setRoot("producto-inicio");
     }
