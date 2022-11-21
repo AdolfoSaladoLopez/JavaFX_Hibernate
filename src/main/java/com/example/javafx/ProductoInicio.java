@@ -1,12 +1,21 @@
 package com.example.javafx;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 import models.Pedido;
 import models.PedidoString;
 import models.Producto;
@@ -103,6 +112,10 @@ public class ProductoInicio implements Initializable {
                 gestorProductos.eliminarProducto(tablaProductos.getSelectionModel().getSelectedItem());
                 actualizarTabla();
             }
+        } else if (tablaProductos.getSelectionModel().getSelectedItem() == null) {
+            lAbajo.setText("Debe seleccionar un producto para poder eliminarlo.");
+            lAbajo.setTextFill(Color.WHITE);
+            lAbajo.setBackground(Background.fill(Color.RED));
         }
     }
 
@@ -116,6 +129,10 @@ public class ProductoInicio implements Initializable {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        } else if (tablaProductos.getSelectionModel().getSelectedItem() == null) {
+            lAbajo.setText("Debe seleccionar un producto para poder modificarlo.");
+            lAbajo.setTextFill(Color.WHITE);
+            lAbajo.setBackground(Background.fill(Color.RED));
         }
     }
 
