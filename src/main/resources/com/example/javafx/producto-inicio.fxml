@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Inicio">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.ProductoInicio">
     <center>
         <VBox id="vBox" alignment="TOP_CENTER" BorderPane.alignment="CENTER">
             <children>
-                <Label alignment="CENTER" contentDisplay="CENTER" text="PEDIDOS PENDIENTES DE HOY">
+                <Label alignment="CENTER" contentDisplay="CENTER" text="CARTA DE PRODUCTOS">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
@@ -24,13 +24,13 @@
                         <Insets bottom="20.0" />
                     </VBox.margin>
                 </Label>
-                <TableView fx:id="tabla" minHeight="481.0" prefWidth="307.0">
+                <TableView fx:id="tablaProductos" minHeight="481.0" prefWidth="307.0">
                     <columns>
                         <TableColumn fx:id="tcId" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="ID" />
-                        <TableColumn fx:id="tcFecha" prefWidth="75.0" text="FECHA" />
-                        <TableColumn fx:id="tcCliente" prefWidth="75.0" text="CLIENTE" />
-                        <TableColumn fx:id="tcEstado" prefWidth="75.0" text="ESTADO" />
-                        <TableColumn fx:id="tcProducto" prefWidth="75.0" text="PRODUCTO" />
+                        <TableColumn fx:id="tcNombre" prefWidth="75.0" text="NOMBRE" />
+                        <TableColumn fx:id="tcTipo" prefWidth="75.0" text="TIPO" />
+                        <TableColumn fx:id="tcPrecio" prefWidth="75.0" text="PRECIO" />
+                        <TableColumn fx:id="tcDisponibilidad" prefWidth="75.0" text="DISPONIBILIDAD" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -41,9 +41,9 @@
                         <Insets top="20.0" />
                     </VBox.margin>
                     <children>
-                        <Button fx:id="btnCrear" mnemonicParsing="false" onAction="#crearPedido" text="CREAR NUEVO PEDIDO" />
-                        <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#modificarPedido" text="MODIFICAR PEDIDO" />
-                        <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarPedido" text="ELIMINAR PEDIDO" />
+                        <Button fx:id="btnCrearProducto" mnemonicParsing="false" onAction="#crearProducto" text="CREAR NUEVO PRODUCTO" />
+                        <Button fx:id="btnModificarProducto" mnemonicParsing="false" onAction="#modificarProducto" text="MODIFICAR PRODUCTO" />
+                        <Button fx:id="btnEliminarProducto" mnemonicParsing="false" onAction="#eliminarProducto" text="ELIMINAR PRODUCTO" />
                     </children>
                 </HBox>
             </children>
@@ -64,6 +64,6 @@
         </MenuBar>
     </top>
     <bottom>
-        <Label fx:id="lAbajo" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="30.0" text="PEDIDOS PENDIENTES" BorderPane.alignment="CENTER" />
+        <Label fx:id="lAbajo" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="30.0" text="CARTA DE PRODUCTOS" BorderPane.alignment="CENTER" />
     </bottom>
 </BorderPane>

@@ -13,9 +13,9 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("inicio"), 640, 480);
-        setRoot("inicio");
+        scene = new Scene(loadFXML("producto-inicio"));
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

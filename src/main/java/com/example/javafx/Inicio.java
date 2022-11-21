@@ -26,6 +26,9 @@ public class Inicio implements Initializable {
     PedidoDAO gestorPedidos = new PedidoDAOHib();
 
     @FXML
+    private Menu btnAbout;
+
+    @FXML
     private Button btnCrear;
 
     @FXML
@@ -55,6 +58,7 @@ public class Inicio implements Initializable {
     @FXML
     private TableColumn<PedidoString, String> tcProducto;
 
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         tcId.setCellValueFactory(new PropertyValueFactory<PedidoString, String>("id"));
@@ -62,6 +66,7 @@ public class Inicio implements Initializable {
         tcCliente.setCellValueFactory(new PropertyValueFactory<PedidoString, String>("cliente"));
         tcEstado.setCellValueFactory(new PropertyValueFactory<PedidoString, String>("estado"));
         tcProducto.setCellValueFactory(new PropertyValueFactory<PedidoString, String>("producto"));
+
 
         actualizarTabla();
 
