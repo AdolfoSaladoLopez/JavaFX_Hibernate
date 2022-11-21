@@ -1,0 +1,98 @@
+.borderPane {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #3da0b6, #cbf3ec);
+}
+
+.textoInicio {
+    -fx-font-family: Arial;
+    -fx-font: #ffffff;
+    -fx-effect: dropshadow(one-pass-box, #ffffff, 5, 0, -1, 2);
+
+}
+
+.btn {
+    -fx-font-family: Arial;
+    -fx-effect: dropshadow(gaussian, #ffffff, 10, 0, 0, 0);
+    -fx-background-radius: 40;
+}
+
+#etiquetaInferior {
+    -fx-font-family: Arial;
+    -fx-font-size: 110%;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 50;
+    -fx-effect: dropshadow(gaussian, #3da0b6, 10, 0, 0, 0);
+
+}
+
+#vbox {
+    -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #cbf3ec, #3da0b6);
+
+}
+
+.tabla {
+    -fx-border-radius: 100;
+    -fx-font-family: Arial;
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, #ffffff, 20, 0, 0, 0);
+    -fx-background-radius: 10;
+
+}
+
+.columna {
+    -fx-border-radius: 100;
+    -fx-background-color: #d7d3d3;
+}
+
+.mbNav {
+    -fx-background-color: #cdd2d2;
+    -fx-border-color: black;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+    -fx-font-family: Arial;
+}
+
+.opcion {
+    -fx-border-color: black;
+    -fx-background-color: white;
+}
+
+.textos {
+    -fx-font-size: 120%;
+    -fx-font-weight: bold;
+    -fx-background-color: #a4a3a3;
+    -fx-background-radius: 50;
+}
+
+.etiquetitas {
+    -fx-font-size: 120%;
+}
+
+.vbox {
+
+}
+
+#producto {
+    -fx-font-size: 120%;
+    -fx-font-family: Arial;
+
+}
+
+.etiquetasEstadisticas {
+    -fx-font-family: Arial;
+    -fx-font-weight: bold;
+    -fx-font-size: 120%;
+    -fx-background-color: #e0eaec;
+    -fx-background-radius: 100;
+}
+
+.etiquetaPrincipalEstadisticas {
+    -fx-font-size: 120%;
+    -fx-font-weight: bold;
+    -fx-background-color: #d2cece;
+    -fx-background-radius: 50;
+
+}
+
+.est {
+    -fx-font-size: 120%;
+}

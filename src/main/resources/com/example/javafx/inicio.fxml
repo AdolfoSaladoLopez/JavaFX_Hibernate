@@ -13,11 +13,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Inicio">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="borderPane" stylesheets="@../../../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Inicio">
     <center>
         <VBox id="vBox" alignment="TOP_CENTER" BorderPane.alignment="CENTER">
             <children>
-                <Label alignment="CENTER" contentDisplay="CENTER" text="PEDIDOS PENDIENTES DE HOY">
+                <Label alignment="CENTER" contentDisplay="CENTER" styleClass="textoInicio" stylesheets="@../../../styles/style.css" text="PEDIDOS PENDIENTES DE HOY">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
@@ -25,9 +25,9 @@
                         <Insets bottom="20.0" />
                     </VBox.margin>
                 </Label>
-                <TableView fx:id="tabla" minHeight="481.0" prefWidth="307.0">
+                <TableView fx:id="tabla" minHeight="481.0" prefWidth="307.0" styleClass="tabla" stylesheets="@../../../styles/style.css">
                     <columns>
-                        <TableColumn fx:id="tcId" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="ID" />
+                        <TableColumn fx:id="tcId" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" styleClass="columna" text="ID" />
                         <TableColumn fx:id="tcFecha" prefWidth="75.0" text="FECHA" />
                         <TableColumn fx:id="tcCliente" prefWidth="75.0" text="CLIENTE" />
                         <TableColumn fx:id="tcEstado" prefWidth="75.0" text="ESTADO" />
@@ -42,12 +42,12 @@
                         <Insets top="20.0" />
                     </VBox.margin>
                     <children>
-                        <Button fx:id="btnCrear" mnemonicParsing="false" onAction="#crearPedido" text="CREAR NUEVO PEDIDO" />
-                        <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#modificarPedido" text="MODIFICAR PEDIDO" />
-                        <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarPedido" text="ELIMINAR PEDIDO" />
+                        <Button fx:id="btnCrear" mnemonicParsing="false" onAction="#crearPedido" styleClass="btn" stylesheets="@../../../styles/style.css" text="CREAR NUEVO PEDIDO" />
+                        <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#modificarPedido" styleClass="btn" stylesheets="@../../../styles/style.css" text="MODIFICAR PEDIDO" />
+                        <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarPedido" styleClass="btn" stylesheets="@../../../styles/style.css" text="ELIMINAR PEDIDO" />
                     </children>
                 </HBox>
-            <Button fx:id="btnTotalPedidos" mnemonicParsing="false" onAction="#mostrarTotalPedidos" text="MOSTRAR EL TOTAL DE PEDIDOS">
+            <Button fx:id="btnTotalPedidos" mnemonicParsing="false" onAction="#mostrarTotalPedidos" styleClass="btn" stylesheets="@../../../styles/style.css" text="MOSTRAR EL TOTAL DE PEDIDOS">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
@@ -62,15 +62,15 @@
         </VBox>
     </center>
     <top>
-        <MenuBar id="mbNav" BorderPane.alignment="CENTER">
+        <MenuBar style="-fx-border-radius: 30;" styleClass="mbNav" stylesheets="@../../../styles/style.css" BorderPane.alignment="CENTER">
             <menus>
-                <Menu fx:id="btnVolver" mnemonicParsing="false" text="Ir">
+                <Menu fx:id="btnVolver" mnemonicParsing="false" styleClass="mbNav" text="Ir">
                <items>
-                  <MenuItem fx:id="btnVolverInicio" mnemonicParsing="false" onAction="#volverInicio" text="Ir a Inicio" />
+                  <MenuItem fx:id="btnVolverInicio" mnemonicParsing="false" onAction="#volverInicio" styleClass="mbNav" text="Ir a Inicio" />
                </items></Menu>
-                <Menu fx:id="btnAbout" mnemonicParsing="false" text="Acerca de">
+                <Menu fx:id="btnAbout" mnemonicParsing="false" styleClass="mbNav" text="Acerca de">
                <items>
-                  <MenuItem fx:id="btnInformacion" mnemonicParsing="false" onAction="#alertaInformacion" text="Información del software" />
+                  <MenuItem fx:id="btnInformacion" mnemonicParsing="false" onAction="#alertaInformacion" styleClass="mbNav" text="Información del software" />
                </items></Menu>
             </menus>
         </MenuBar>

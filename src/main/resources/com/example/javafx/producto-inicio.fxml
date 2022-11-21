@@ -13,11 +13,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.ProductoInicio">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="borderPane" stylesheets="@../../../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.ProductoInicio">
     <center>
         <VBox id="vBox" alignment="TOP_CENTER" BorderPane.alignment="CENTER">
             <children>
-                <Label alignment="CENTER" contentDisplay="CENTER" text="CARTA DE PRODUCTOS">
+                <Label alignment="CENTER" contentDisplay="CENTER" styleClass="textoInicio" stylesheets="@../../../styles/style.css" text="CARTA DE PRODUCTOS">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
@@ -25,13 +25,13 @@
                         <Insets bottom="20.0" />
                     </VBox.margin>
                 </Label>
-                <TableView fx:id="tablaProductos" minHeight="481.0" prefWidth="307.0">
+                <TableView fx:id="tablaProductos" minHeight="481.0" prefWidth="307.0" styleClass="tabla" stylesheets="@../../../styles/style.css">
                     <columns>
-                        <TableColumn fx:id="tcId" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="ID" />
-                        <TableColumn fx:id="tcNombre" prefWidth="75.0" text="NOMBRE" />
-                        <TableColumn fx:id="tcTipo" prefWidth="75.0" text="TIPO" />
-                        <TableColumn fx:id="tcPrecio" prefWidth="75.0" text="PRECIO" />
-                        <TableColumn fx:id="tcDisponibilidad" prefWidth="75.0" text="DISPONIBILIDAD" />
+                        <TableColumn fx:id="tcId" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" styleClass="columna" text="ID" />
+                        <TableColumn fx:id="tcNombre" prefWidth="75.0" styleClass="columna" text="NOMBRE" />
+                        <TableColumn fx:id="tcTipo" prefWidth="75.0" styleClass="columna" text="TIPO" />
+                        <TableColumn fx:id="tcPrecio" prefWidth="75.0" styleClass="columna" text="PRECIO" />
+                        <TableColumn fx:id="tcDisponibilidad" prefWidth="75.0" styleClass="columna" text="DISPONIBILIDAD" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -42,9 +42,9 @@
                         <Insets top="20.0" />
                     </VBox.margin>
                     <children>
-                        <Button fx:id="btnCrearProducto" mnemonicParsing="false" onAction="#crearProducto" text="CREAR NUEVO PRODUCTO" />
-                        <Button fx:id="btnModificarProducto" mnemonicParsing="false" onAction="#modificarProducto" text="MODIFICAR PRODUCTO" />
-                        <Button fx:id="btnEliminarProducto" mnemonicParsing="false" onAction="#eliminarProducto" text="ELIMINAR PRODUCTO" />
+                        <Button fx:id="btnCrearProducto" mnemonicParsing="false" onAction="#crearProducto" styleClass="btn" stylesheets="@../../../styles/style.css" text="CREAR NUEVO PRODUCTO" />
+                        <Button fx:id="btnModificarProducto" mnemonicParsing="false" onAction="#modificarProducto" styleClass="btn" stylesheets="@../../../styles/style.css" text="MODIFICAR PRODUCTO" />
+                        <Button fx:id="btnEliminarProducto" mnemonicParsing="false" onAction="#eliminarProducto" styleClass="btn" stylesheets="@../../../styles/style.css" text="ELIMINAR PRODUCTO" />
                     </children>
                 </HBox>
             </children>
@@ -57,7 +57,7 @@
         </VBox>
     </center>
     <top>
-        <MenuBar id="mbNav" BorderPane.alignment="CENTER">
+        <MenuBar id="mbNav" styleClass="mbNav" stylesheets="@../../../styles/style.css" BorderPane.alignment="CENTER">
             <menus>
                 <Menu mnemonicParsing="false" text="Ir">
                <items>

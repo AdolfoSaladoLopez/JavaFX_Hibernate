@@ -9,32 +9,44 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.MenuInicio">
+<BorderPane styleClass="borderPane" stylesheets="@../../../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.MenuInicio">
     <center>
-        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+        <VBox id="vbox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../styles/style.css">
             <children>
-                <Label text="¡SEA BIENVENID@ AL GESTOR DE DESAYUNOS!">
+                <Label alignment="CENTER" contentDisplay="CENTER" styleClass="textoInicio" stylesheets="@../../../styles/style.css" text="GESTIÓN DE DESAYUNOS ">
                     <font>
                         <Font size="24.0" />
                     </font>
                 </Label>
-                <ImageView fx:id="ivDesayunos" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView id="imagenRedonda" fx:id="ivDesayunos" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                 </ImageView>
                 <HBox alignment="CENTER" spacing="10.0">
                     <children>
-                        <Button fx:id="btnGestionarProductos" mnemonicParsing="false" onAction="#gestionarProductos" text="GESTIONAR PRODUCTOS" />
-                        <Button fx:id="btnGestionarPedidos" mnemonicParsing="false" onAction="#gestionarPedidos" text="GESTIONAR PEDIDOS" />
+                        <Button fx:id="btnGestionarProductos" mnemonicParsing="false" onAction="#gestionarProductos" styleClass="btn" text="GESTIONAR PRODUCTOS">
+                     <font>
+                        <Font name="Consolas" size="12.0" />
+                     </font></Button>
+                        <Button fx:id="btnGestionarPedidos" mnemonicParsing="false" onAction="#gestionarPedidos" styleClass="btn" text="GESTIONAR PEDIDOS">
+                     <font>
+                        <Font name="Consolas" size="12.0" />
+                     </font></Button>
                     </children>
                 </HBox>
-                <Button fx:id="btnEstadisticas" mnemonicParsing="false" onAction="#mostrarEstadisticas" text="MENÚ DE ESTADÍSTICAS">
+                <Button fx:id="btnEstadisticas" mnemonicParsing="false" onAction="#mostrarEstadisticas" styleClass="btn" stylesheets="@../../../styles/style.css" text="MENÚ DE ESTADÍSTICAS">
                     <VBox.margin>
                         <Insets top="10.0" />
                     </VBox.margin>
                 </Button>
             </children>
+         <BorderPane.margin>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </BorderPane.margin>
         </VBox>
     </center>
     <bottom>
-        <Label text="Software realizado por José Luis Dommarco Berrocal y Adolfo Salado" BorderPane.alignment="CENTER" />
+        <Label id="etiquetaInferior" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Software realizado por José Luis Dommarco Berrocal y Adolfo Salado" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin></Label>
     </bottom>
 </BorderPane>

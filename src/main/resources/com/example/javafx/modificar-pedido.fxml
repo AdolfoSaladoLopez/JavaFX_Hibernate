@@ -12,67 +12,63 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="303.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.javafx.ModificarPedido">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="600.0" styleClass="borderPane" stylesheets="@../../../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.ModificarPedido">
     <children>
-        <Label text="MODIFICAR UN PEDIDO">
+        <Label styleClass="textoInicio" text="MODIFICAR UN PEDIDO">
             <font>
-                <Font size="19.0"/>
+                <Font size="19.0" />
             </font>
         </Label>
-        <GridPane alignment="TOP_CENTER" prefHeight="117.0" prefWidth="499.0" style="-fx-border-color: black;">
+        <GridPane alignment="TOP_CENTER" prefHeight="117.0" prefWidth="499.0">
             <columnConstraints>
-                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <VBox.margin>
-                <Insets bottom="50.0" left="50.0" right="50.0" top="35.0"/>
+                <Insets bottom="50.0" left="50.0" right="50.0" top="35.0" />
             </VBox.margin>
             <children>
                 <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Nombre del cliente:">
                     <GridPane.margin>
-                        <Insets right="20.0"/>
+                        <Insets right="20.0" />
                     </GridPane.margin>
                 </Label>
                 <Label alignment="CENTER" contentDisplay="CENTER" text="Producto:" GridPane.rowIndex="1">
                     <GridPane.margin>
-                        <Insets right="20.0"/>
+                        <Insets right="20.0" />
                     </GridPane.margin>
                 </Label>
-                <TextField fx:id="tfNombre" GridPane.columnIndex="1">
+                <TextField fx:id="tfNombre" styleClass="btn" stylesheets="@../../../styles/style.css" GridPane.columnIndex="1">
                     <GridPane.margin>
-                        <Insets right="20.0"/>
+                        <Insets right="20.0" />
                     </GridPane.margin>
                 </TextField>
-                <ComboBox fx:id="cbProducto" onAction="#productoSeleccionado" prefHeight="26.0" prefWidth="246.0"
-                          GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <ComboBox fx:id="cbProducto" onAction="#productoSeleccionado" prefHeight="26.0" prefWidth="246.0" styleClass="btn" stylesheets="@../../../styles/style.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <GridPane.margin>
-                        <Insets right="20.0"/>
+                        <Insets right="20.0" />
                     </GridPane.margin>
                 </ComboBox>
                 <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Estado" GridPane.rowIndex="2">
                     <GridPane.margin>
-                        <Insets right="20.0"/>
+                        <Insets right="20.0" />
                     </GridPane.margin>
                 </Label>
-                <ComboBox fx:id="cbEstado" onAction="#eventoSeleccionado" prefHeight="26.0" prefWidth="246.0"
-                          GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <ComboBox fx:id="cbEstado" onAction="#eventoSeleccionado" prefHeight="26.0" prefWidth="246.0" styleClass="btn" stylesheets="@../../../styles/style.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
                     <GridPane.margin>
-                        <Insets right="20.0"/>
+                        <Insets right="20.0" />
                     </GridPane.margin>
                 </ComboBox>
             </children>
         </GridPane>
         <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="20.0">
             <children>
-                <Button fx:id="btnEnviar" mnemonicParsing="false" onAction="#enviar" text="Enviar"/>
-                <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" text="Cancelar"/>
+                <Button fx:id="btnEnviar" mnemonicParsing="false" onAction="#enviar" styleClass="btn" text="Enviar" />
+                <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" styleClass="btn" text="Cancelar" />
             </children>
         </FlowPane>
     </children>
