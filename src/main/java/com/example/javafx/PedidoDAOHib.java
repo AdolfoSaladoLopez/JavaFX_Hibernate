@@ -2,6 +2,7 @@ package com.example.javafx;
 
 import java.util.List;
 
+import jakarta.persistence.Query;
 import models.Pedido;
 import org.hibernate.Transaction;
 
@@ -61,4 +62,27 @@ public class PedidoDAOHib implements PedidoDAO {
         }
     }
 
+    @Override
+    public List<Pedido> obtenerTotalPedidosOrdenados() {
+        try (var s = HibernateUtil.getSessionFactory().openSession()) {
+            Query q = s.createQuery("From Pedido as p order by p.fecha", Pedido.class);
+            return q.getResultList();
+        }
+    }
+
+    @Override
+    public List obtenerCantidadTotal() {
+        try (var s = HibernateUtil.getSessionFactory().openSession()) {
+            Query q = s.createQuery("select sum(pro.precio) from Producto pro, Pedido ped where pro.id = ped.producto.id");
+            return q.getResultList();
+        }
+    }
+
+    @Override
+    public List obtenerMejorCliente() {
+        try (var s = HibernateUtil.getSessionFactory().openSession()) {
+            Query q = s.createQuery("select ped.cliente from Pedido ped group by ped.cliente order by ped.cliente asc");
+            return q.getResultList();
+        }
+    }
 }

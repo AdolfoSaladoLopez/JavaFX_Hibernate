@@ -16,4 +16,10 @@ public interface PedidoDAO {
     public List<Pedido> obtenerListadoPedidos();
 
     public List<Pedido> obtenerPedidosPendientesHoy();
+
+    public List<Pedido> obtenerTotalPedidosOrdenados();
+
+    public List obtenerCantidadTotal();
+
+    public List obtenerMejorCliente();
 }

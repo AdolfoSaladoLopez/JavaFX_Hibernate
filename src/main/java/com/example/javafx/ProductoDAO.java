@@ -15,4 +15,8 @@ public interface ProductoDAO {
 
     public List<Producto> obtenerListadoProductos();
 
+    public List obtenerProductoMasVendido();
+
+    public List obtenerProductosNoVendidos();
+
 }

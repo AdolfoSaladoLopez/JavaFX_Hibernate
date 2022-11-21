@@ -16,6 +16,10 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MenuInicio implements Initializable {
+    PedidoDAO gestorPedidos = new PedidoDAOHib();
+    ProductoDAO gestorProductos = new ProductoDAOHib();
+
+
     private VBox vb = new VBox();
     @FXML
     private Button btnEstadisticas;
@@ -40,6 +44,11 @@ public class MenuInicio implements Initializable {
         } catch (FileNotFoundException ex) {
             System.out.println("El usuario no tiene imagen");
         }
+
+        System.out.println(gestorPedidos.obtenerCantidadTotal());
+        System.out.println(gestorPedidos.obtenerMejorCliente());
+        System.out.println(gestorProductos.obtenerProductoMasVendido().get(0));
+        System.out.println(gestorProductos.obtenerProductosNoVendidos());
 
     }
 

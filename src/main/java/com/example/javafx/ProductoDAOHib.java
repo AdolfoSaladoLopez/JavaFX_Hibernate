@@ -1,5 +1,6 @@
 package com.example.javafx;
 
+import jakarta.persistence.Query;
 import models.Producto;
 import org.hibernate.Transaction;
 
@@ -48,6 +49,23 @@ public class ProductoDAOHib implements ProductoDAO {
         try (var s = HibernateUtil.getSessionFactory().openSession()) {
             var q = s.createQuery("FROM Producto");
             return q.list();
+        }
+    }
+
+    @Override
+    public List obtenerProductoMasVendido() {
+        try (var s = HibernateUtil.getSessionFactory().openSession()) {
+            Query q = s.createQuery("select pro.nombre from Producto pro group by pro.nombre order by pro.nombre asc");
+            return q.getResultList();
+        }
+    }
+
+    @Override
+    public List obtenerProductosNoVendidos() {
+        try (var s = HibernateUtil.getSessionFactory().openSession()) {
+            Query q = s.createQuery("select pro.nombre from Producto pro, Pedido ped where pro.id " +
+                    "not in (select ped.producto.id from Pedido ped) group by pro.nombre");
+            return q.getResultList();
         }
     }
 }

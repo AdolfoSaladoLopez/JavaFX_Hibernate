@@ -73,7 +73,7 @@ public class MenuTotalPedidos implements Initializable {
     }
 
     private void actualizarTabla() {
-        var pedidosPendientes = new ArrayList<Pedido>(gestorPedidos.obtenerListadoPedidos());
+        var pedidosPendientes = new ArrayList<Pedido>(gestorPedidos.obtenerTotalPedidosOrdenados());
         var pedidosString = new ArrayList<PedidoString>();
 
         for (Pedido pedido : pedidosPendientes) {
@@ -87,7 +87,6 @@ public class MenuTotalPedidos implements Initializable {
 
             pedidosString.add(ps);
         }
-
 
 
         ObservableList<PedidoString> datos = FXCollections.observableArrayList();
