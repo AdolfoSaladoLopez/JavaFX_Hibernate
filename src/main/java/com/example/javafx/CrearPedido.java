@@ -66,6 +66,7 @@ public class CrearPedido implements Initializable {
 
         cbProducto.setItems(items);
         cbProducto.setConverter(new ProductoConverter());
+        cbProducto.getSelectionModel().selectFirst();
 
     }
 }

@@ -63,7 +63,11 @@ public class MenuInicio implements Initializable {
 
     @FXML
     void mostrarEstadisticas(ActionEvent event) {
-
+        try {
+            HelloApplication.setRoot("menu-estadisticas");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

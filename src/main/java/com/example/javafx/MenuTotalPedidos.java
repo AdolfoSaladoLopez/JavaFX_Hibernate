@@ -126,13 +126,38 @@ public class MenuTotalPedidos implements Initializable {
 
     @FXML
     void modificarPedido(ActionEvent event) throws IOException {
-
-
         if (tabla.getSelectionModel().getSelectedItem() != null) {
 
             Integer id = Integer.valueOf(tabla.getSelectionModel().getSelectedItem().getId());
             SessionData.setPedido(gestorPedidos.obtenerPedido(id));
             HelloApplication.setRoot("modificar-pedido");
+        }
+    }
+
+    @FXML
+    void IrPedidosPendientes(ActionEvent event) {
+        try {
+            HelloApplication.setRoot("inicio");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void alertaInformacion(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Información del software.");
+        alert.setContentText("Este software ha sido desarrollado por José Luis Dommarco y Adolfo Salado.\n" +
+                "Realizado con Hibernate y JavaFX.");
+        alert.showAndWait();
+    }
+
+    @FXML
+    void irAInicio(ActionEvent event) {
+        try {
+            HelloApplication.setRoot("menu-inicio");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

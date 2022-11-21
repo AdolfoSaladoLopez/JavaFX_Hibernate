@@ -85,6 +85,7 @@ public class ProductoInicio implements Initializable {
         tablaProductos.getItems().addAll(cartaProductos);
 
     }
+
     @FXML
     void crearPedido(ActionEvent event) {
 
@@ -134,6 +135,24 @@ public class ProductoInicio implements Initializable {
             lAbajo.setTextFill(Color.WHITE);
             lAbajo.setBackground(Background.fill(Color.RED));
         }
+    }
+
+    @FXML
+    void IrAInicio(ActionEvent event) {
+        try {
+            HelloApplication.setRoot("menu-inicio");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void alertaInformacion(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Información del software.");
+        alert.setContentText("Este software ha sido desarrollado por José Luis Dommarco y Adolfo Salado.\n" +
+                "Realizado con Hibernate y JavaFX.");
+        alert.showAndWait();
     }
 
 
