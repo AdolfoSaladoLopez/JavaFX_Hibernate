@@ -70,7 +70,6 @@ public class CrearProducto implements Initializable {
         }
     }
 
-
     @FXML
     void enviar(ActionEvent event) throws IOException {
         var cartaProductos = new ArrayList<Producto>(gestorProductos.obtenerListadoProductos());
@@ -93,8 +92,6 @@ public class CrearProducto implements Initializable {
 
         HelloApplication.setRoot("producto-inicio");
     }
-
-
 
 
 }

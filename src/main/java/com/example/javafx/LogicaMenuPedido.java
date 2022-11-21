@@ -12,7 +12,7 @@ public class LogicaMenuPedido {
     private static List<Pedido> listadoPedidos = new ArrayList<>();
 
     /***
-     * Método que cuenta con la la lógica de la opción listar pedidos
+     * Método que cuenta con la lógica de la opción listar pedidos
      */
     public static void opcionListarPedidos() {
         System.out.println("Has elegido la opción: Listar todos los pedidos existentes.");

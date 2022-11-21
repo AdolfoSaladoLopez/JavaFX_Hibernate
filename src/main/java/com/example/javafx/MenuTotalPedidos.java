@@ -1,12 +1,15 @@
 package com.example.javafx;
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import models.Pedido;
 import models.PedidoString;
 
@@ -18,7 +21,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Inicio implements Initializable {
+public class MenuTotalPedidos implements Initializable {
 
     PedidoDAO gestorPedidos = new PedidoDAOHib();
 
@@ -32,19 +35,7 @@ public class Inicio implements Initializable {
     private Button btnEliminar;
 
     @FXML
-    private MenuItem btnInformacion;
-
-    @FXML
     private Button btnModificar;
-
-    @FXML
-    private Button btnTotalPedidos;
-
-    @FXML
-    private Menu btnVolver;
-
-    @FXML
-    private MenuItem btnVolverInicio;
 
     @FXML
     private Label lAbajo;
@@ -82,7 +73,7 @@ public class Inicio implements Initializable {
     }
 
     private void actualizarTabla() {
-        var pedidosPendientes = new ArrayList<Pedido>(gestorPedidos.obtenerPedidosPendientesHoy());
+        var pedidosPendientes = new ArrayList<Pedido>(gestorPedidos.obtenerListadoPedidos());
         var pedidosString = new ArrayList<PedidoString>();
 
         for (Pedido pedido : pedidosPendientes) {
@@ -96,6 +87,8 @@ public class Inicio implements Initializable {
 
             pedidosString.add(ps);
         }
+
+
 
         ObservableList<PedidoString> datos = FXCollections.observableArrayList();
         datos.addAll(pedidosString);
@@ -134,39 +127,13 @@ public class Inicio implements Initializable {
     @FXML
     void modificarPedido(ActionEvent event) throws IOException {
 
+
         if (tabla.getSelectionModel().getSelectedItem() != null) {
 
             Integer id = Integer.valueOf(tabla.getSelectionModel().getSelectedItem().getId());
             SessionData.setPedido(gestorPedidos.obtenerPedido(id));
             HelloApplication.setRoot("modificar-pedido");
         }
-    }
-
-    @FXML
-    void mostrarTotalPedidos(ActionEvent event) {
-        try {
-            HelloApplication.setRoot("menu-total-pedidos");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void volverInicio(ActionEvent event) {
-        try {
-            HelloApplication.setRoot("menu-inicio");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void alertaInformacion(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Información del software.");
-        alert.setContentText("Este software ha sido desarrollado por José Luis Dommarco y Adolfo Salado.\n" +
-                "Realizado con Hibernate y JavaFX.");
-        alert.showAndWait();
     }
 
 }
