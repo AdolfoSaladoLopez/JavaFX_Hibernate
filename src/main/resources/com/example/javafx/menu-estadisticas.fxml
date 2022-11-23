@@ -40,7 +40,7 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Label>
-            <Label alignment="CENTER" prefHeight="5.0" prefWidth="286.0" styleClass="textos" stylesheets="@../../../styles/style.css" text="PRODUCTOS NO VENDIDOS">
+            <Label alignment="CENTER" prefHeight="5.0" prefWidth="286.0" styleClass="textos" stylesheets="@../../../styles/style.css" text="PRODUCTOS QUE HAN SIDO VENDIDOS">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -48,9 +48,9 @@
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </padding>
             </Label>
-            <TableView fx:id="tabla" prefHeight="134.0" prefWidth="922.0" styleClass="tabla">
+            <TableView fx:id="tabla" maxWidth="1.7976931348623157E308" styleClass="tabla">
               <columns>
-                <TableColumn fx:id="cNombre" maxWidth="921.5999953985214" minWidth="100.0" prefWidth="921.5999953985214" resizable="false" styleClass="columna" text="NOMBRE DEL PRODUCTO" />
+                <TableColumn fx:id="cNombre" maxWidth="-Infinity" minWidth="1500.0" prefWidth="-1.0" resizable="false" styleClass="columna" text="NOMBRE DEL PRODUCTO" />
               </columns>
                <VBox.margin>
                   <Insets bottom="50.0" left="50.0" right="50.0" top="10.0" />

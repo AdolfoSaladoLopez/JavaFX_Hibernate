@@ -61,10 +61,11 @@ public class ProductoDAOHib implements ProductoDAO {
     }
 
     @Override
-    public List<Producto> obtenerProductosNoVendidos() {
+    public List<Producto> obtenerProductosVendidos() {
         try (var s = HibernateUtil.getSessionFactory().openSession()) {
-            Query q = s.createQuery("select producto from Producto pro, Pedido ped where pro.id " +
-                    "not in (select ped.producto.id from Pedido ped) group by producto");
+            Query q = s.createQuery("select producto from Producto pro, Pedido ped where ped.producto.id = pro.id" +
+                    " and producto " +
+                    " in (select ped2.producto from Pedido ped2) group by producto");
             return q.getResultList();
         }
     }

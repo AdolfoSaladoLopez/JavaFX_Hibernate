@@ -58,7 +58,7 @@ public class MenuEstadisticas implements Initializable {
 
     private void actualizarTabla() {
         ObservableList<Producto> productosNoVendidos = FXCollections.observableArrayList();
-        var listadoProductosNoVendidos = new ArrayList<>(gestorProductos.obtenerProductosNoVendidos());
+        var listadoProductosNoVendidos = new ArrayList<>(gestorProductos.obtenerProductosVendidos());
         productosNoVendidos.addAll(listadoProductosNoVendidos);
 
         System.out.println(listadoProductosNoVendidos);

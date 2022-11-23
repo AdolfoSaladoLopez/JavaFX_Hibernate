@@ -13,8 +13,9 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("menu-inicio"), 1000, 600);
+        scene = new Scene(loadFXML("menu-inicio"), 1000, 700);
         stage.setScene(scene);
+        stage.setFullScreen(true);
         stage.setResizable(false);
         stage.show();
     }

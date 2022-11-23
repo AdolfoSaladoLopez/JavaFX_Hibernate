@@ -44,7 +44,7 @@
                         <Insets right="20.0" />
                     </GridPane.margin>
                 </Label>
-                <TextField fx:id="tfNombre" styleClass="btn" GridPane.columnIndex="1">
+                <TextField fx:id="tfNombre" maxWidth="300.0" minWidth="198.0" prefHeight="23.0" prefWidth="198.0" styleClass="btn" GridPane.columnIndex="1">
                     <GridPane.margin>
                         <Insets right="20.0" />
                     </GridPane.margin>

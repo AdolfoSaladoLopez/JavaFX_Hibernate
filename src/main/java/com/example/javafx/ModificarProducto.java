@@ -83,6 +83,7 @@ public class ModificarProducto implements Initializable {
     @FXML
     void enviar(ActionEvent event) throws IOException {
         var cartaProductos = new ArrayList<Producto>(gestorProductos.obtenerListadoProductos());
+
         for (Producto producto : cartaProductos) {
             if (producto.getNombre().equals(tfNombre.getText())) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);

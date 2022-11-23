@@ -150,7 +150,7 @@ public class ProductoInicio implements Initializable {
     void alertaInformacion(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText("Información del software.");
-        alert.setContentText("Este software ha sido desarrollado por José Luis Dommarco y Adolfo Salado.\n" +
+        alert.setContentText("Este software ha sido desarrollado por Adolfo Salado.\n" +
                 "Realizado con Hibernate y JavaFX.");
         alert.showAndWait();
     }

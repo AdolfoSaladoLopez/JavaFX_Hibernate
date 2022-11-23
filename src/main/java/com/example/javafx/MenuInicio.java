@@ -12,7 +12,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MenuInicio implements Initializable {
@@ -48,7 +47,7 @@ public class MenuInicio implements Initializable {
         System.out.println(gestorPedidos.obtenerCantidadTotal());
         System.out.println(gestorPedidos.obtenerMejorCliente());
         System.out.println(gestorProductos.obtenerProductoMasVendido().get(0));
-        System.out.println(gestorProductos.obtenerProductosNoVendidos());
+        System.out.println(gestorProductos.obtenerProductosVendidos());
 
     }
 

@@ -16,7 +16,6 @@ public class Switches {
                         Utilidades.limpiarPantalla();
                         System.out.println("¡Gracias por utilizar nuestro programa!");
                         System.out.println("Este software ha sido creado por: ");
-                        System.out.println("\t- Jose Luis Dommarco Berrocal");
                         System.out.println("\t- Adolfo Salado López");
                         System.out.println("SEGUNDO - C.F.G.S. DAM - CESUR MÁLAGA ESTE");
                         System.out.println("Asignatura: Acceso a Datos.");
