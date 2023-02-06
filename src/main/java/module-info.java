@@ -6,6 +6,8 @@ module com.example.javafx {
     requires org.hibernate.orm.core;
     requires java.naming;
     requires java.sql;
+    requires jasperreports;
+    requires java.desktop;
 
     opens models;
 

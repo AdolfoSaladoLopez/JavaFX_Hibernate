@@ -79,4 +79,11 @@ public class MenuInicio implements Initializable {
     }
 
 
+    public void menuReportes(ActionEvent actionEvent) {
+        try {
+            HelloApplication.setRoot("reportes");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

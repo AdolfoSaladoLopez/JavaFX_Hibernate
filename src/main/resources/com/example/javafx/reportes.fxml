@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Reportes">
+   <center>
+      <VBox alignment="CENTER" styleClass="borderPane" stylesheets="@../../../styles/style.css">
+         <children>
+            <Label styleClass="textoInicio" stylesheets="@../../../styles/style.css" text="MENÚ DE REPORTES" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="19.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button maxWidth="148.0" minWidth="148.0" mnemonicParsing="false" onAction="#btnCarta" prefWidth="148.0" styleClass="btn" stylesheets="@../../../styles/style.css" text="CARTA">
+                     <font>
+                        <Font name="Arial Bold" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button maxWidth="148.0" minWidth="148.0" mnemonicParsing="false" onAction="#btnPedidos" prefWidth="148.0" styleClass="btn" stylesheets="@../../../styles/style.css" text="PEDIDOS DE HOY">
+                     <font>
+                        <Font name="Arial Bold" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button maxWidth="148.0" minWidth="148.0" mnemonicParsing="false" onAction="#btnFechas" prefWidth="148.0" styleClass="btn" stylesheets="@../../../styles/style.css" text="PEDIDOS ENTRE FECHAS">
+                     <font>
+                        <Font name="Arial Bold" size="10.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

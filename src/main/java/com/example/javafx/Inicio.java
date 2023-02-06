@@ -67,6 +67,9 @@ public class Inicio implements Initializable {
     @FXML
     private TableColumn<PedidoString, String> tcProducto;
 
+    @FXML
+    private Button btnReportes;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -167,6 +170,15 @@ public class Inicio implements Initializable {
         alert.setContentText("Este software ha sido desarrollado por Adolfo Salado.\n" +
                 "Realizado con Hibernate y JavaFX.");
         alert.showAndWait();
+    }
+
+    @FXML
+    void menuReportes(ActionEvent event) {
+        try {
+            HelloApplication.setRoot("reportes");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
